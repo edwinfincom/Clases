@@ -1,0 +1,50 @@
+body {
+    background-color: #E9FBE5; /* Fondo verde pastel */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 2px solid black; /* Borde negro de la tabla */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: none; /* Quitamos sombra para que se note el borde negro */
+}
+
+thead {
+    background-color: #FFD200; /* Dorado */
+    color: #333;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: center;
+    border: 2px solid #000; /* Borde negro entre celdas */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Amarillo muy suave */
+}
+
+tbody tr:hover {
+    background-color: #fff3a6; /* Resaltado suave */
+}
+
+th {
+    font-weight: bold;
+    font-size: 1.1em;
+}

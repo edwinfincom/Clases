@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <body>
+            <h1>ʕ•́ᴥ•̀ʔっ♡ Edwin</h1>
+                <br>
+            <table>
+                <thead>
+                    <link rel="stylesheet" href="estilos.css">
+                    <th>Numero</th>
+                    <th>Edad</th>
+                    <th>Nombre</th>
+                    <th>Profesion</th>
+                </thead>
+                <tbody id = "cuerpo-tabla">
+
+                </tbody>
+            </table>
+            <script>
+                async function CargarPersonas() {
+                    try {
+                    const respuesta = await fetch('http://127.0.0.1:5000/ListaPersonas')
+                    const datos = await respuesta.json();
+                    const CuerpoTabla = document.getElementById("cuerpo-tabla");
+                    CuerpoTabla.innerHTML = " ";
+                    let Indice = 1;
+                    datos.forEach ((item) => {
+                        const fila = document.createElement('tr');
+                        fila.innerHTML = `
+                        <td>${Indice}</td>
+                        <td>${item.Edad}</td>
+                        <td>${item.Nombre}</td>
+                        <td>${item.Profesion}</td>
+                        `;
+                        Indice = Indice+1
+                        CuerpoTabla.appendChild(fila);
+                        });
+                    }catch(error){
+                        console.log("El error fue: "+error)
+                    }
+                }
+                document.addEventListener('DOMContentLoaded',CargarPersonas);
+            </script>
+        </body>
+    </head>
+</html>
