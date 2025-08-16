@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .seccionGeneral{
+        height: 400px;
+        width: 700px;
+        background-color: black;
+        color: white;
+        z-index: 1;
+        position: relative;
+    }
+    .subCategoria{
+        background-color: #b5930c;
+        height: 150px;
+        width: 180px;
+        margin-left: 10px;
+        z-index: 1;
+        position: relative;
+    }
+    
+    .seccionGeneral2{
+        height: 400px;
+        width: 50%;
+        background-color: black;
+        display: flex;
+        z-index: 1;
+        position: relative;
+    }
+</style> 
+</head>
+<body>
+    <button style="z-index: 999;">Inicio</button>
+    <a href="#seccionGeneral">Seccion 1</a>
+    <a href="#seccionGeneralB">Seccion 2</a>
+    <a href="#seccionGeneralC">Seccion 3</a>
+    <a href="#seccionGeneralD">Seccion 4</a>
+    <a href="https://uptc.edu.co">Pagina uptc</a>
+    <a style="z-index: 999; position: fixed;" href="#seccionGeneral"> Volver al inicio</a>
+    <div id="seccionGeneral" class="seccionGeneral">
+        <h1 style="text-align: center;">Seccion 1</h1>
+        <br>
+        <div style="display: flex;">
+             <div id="seccion1" class="subCategoria"></div>
+            <div id="seccion2" class="subCategoria"></div>
+        </div>
+       
+    </div>
+    <br>
+    <div id="seccionGeneral2" class="seccionGeneral2">
+       
+    </div>
+    <div id="seccionGeneralB" class="seccionGeneral">
+        <h1><a href="#seccionGeneral">Seccion 2</a></h1>
+        <div id="seccion1" class="subCategoria"></div>
+        <div id="seccion2" class="subCategoria"></div>
+    </div>
+    <br>
+    <div id="seccionGeneral2" class="seccionGeneral2">
+       
+    </div>
+    <div id="seccionGeneralC" class="seccionGeneral">
+        <h1>Seccion 3</h1>
+        <div id="seccion1" class="subCategoria"></div>
+        <div id="seccion2" class="subCategoria"></div>
+    </div>
+    <br>
+    <div id="seccionGeneral2" class="seccionGeneral2">
+       
+    </div>
+    <div id="seccionGeneralD" class="seccionGeneral">
+        <h1>Seccion 4</h1>
+        <div id="seccion1" class="subCategoria"></div>
+        <div id="seccion2" class="subCategoria"></div>
+    </div>
+    <br>
+    <div id="seccionGeneral2" class="seccionGeneral2">
+       
+    </div>
+
+</body>
+</html>

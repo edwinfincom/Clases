@@ -1,7 +1,11 @@
-from flask import Flask, jsonify,request
+from flask import Flask, jsonify,request,send_file
 from flask_cors import CORS
-import pymysql
-
+import pymysql.cursors
+import matplotlib.pyplot as plt
+from io import BytesIO
+import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 app = Flask(__name__)
 CORS(app)
 
@@ -11,7 +15,7 @@ resultadosPersonas =[]
 db = pymysql.connect(
     host="localhost",
     user="root",          
-    password="zb67hr6N=?c4",    
+    password="zb67hr6N=?c4",
     database="sabadoJulio"
 )
 cursor = db.cursor(pymysql.cursors.DictCursor)
@@ -60,6 +64,20 @@ def eliminar(identificacion):
     (identificacion,))
     db.commit()
     return "Persona Eliminada"
+
+@app.route('/graficoPersona', methods=['GET'])
+def graficoLineal():
+    nombres = ["Jorge","Alejandra","Luis","Ana"]
+    edades = [31,27,28,45]
+    plt.figure(figsize=(10, 6))
+    plt.plot(nombres,edades)
+    plt.title("Grafico de edad por persona")
+    img_buffer = BytesIO()
+    plt.savefig(img_buffer, format='png')
+    img_buffer.seek(0)
+    plt.close()
+    
+    return send_file(img_buffer, mimetype='image/png')
 
 if __name__ == '__main__':
    app.run(debug=True)
